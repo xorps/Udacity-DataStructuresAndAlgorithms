@@ -1,0 +1,45 @@
+Ignoring all file IO / cvs parsing.
+
+Task0:
+* Reading from a list which has O(1) access
+* Conclusion: O(1)
+
+Task1:
+* First for loop with two O(1) set insertion operations = O(n)
+* Second loop is the same as the first = O(n)
+* len() is O(1)
+* Addition of these = O(n) + O(n) + O(1) = O(2n + 1)
+* Conclusion: O(n)
+
+Task2:
+* Assuming dict indexing is O(1)
+* head() is O(1)
+* max() is O(n + 1) = O(n)
+* longest() is O(3n + n) = O(n)
+* Conclusion: O(n)
+
+Task3 PartA:
+* We iterate over calls mapping it to Call using map which is O(n)
+* We iterate and build a set of those mapped and include only if its from bangalore: O(n)
+* We sort this set: O(n*log(n))
+* We iterate and print and each item: O(n)
+* We have O(n + n + n*log(n) + n) = O(3n + n*log(n)) = O(n + nlog(n)) = O(n(1 + log(n))) = O(nlog(n))
+* Conclusion: O(nlog(n))
+
+Task3 PartB:
+* assuming map(), and sum() are O(n)
+* total is O(3n)
+* total_to is O(3n)
+* percentage is O(1)
+* printing is O(n)
+* We have O(3n + 3n + 1 + n) = O(7n + 1)
+* Conclusion: O(n)
+
+Task4:
+* in make_whitelist we have 2 for loops with O(1) set insertions = O(2 * 2n) = O(n)
+* outgoing_calls iterates over calls = O(n)
+* suspects initially builds a set with O(1) insertion, and O(1) lookup for whitelist = O(n)
+* then, suspects is sorted = O(nlog(n))
+* suspects is printed = O(n)
+* We have O(n + n + n + nlog(n) + n) = O(4n + nlog(n)) = O(n(4 + log(n))) = O(nlogn)
+* Conclusion: O(nlog(n))
